@@ -144,8 +144,153 @@ Here updatedState is temporary variable for mutating state.
 
 For more details,you can visit below links: https://reactjs.org/docs/forms.html
  
+#### Add Dynamic form field
+
+```
+       <button
+          type="button"
+          style={{ marginRight: "25px" }}
+          name="addNew"
+          onClick={addExtraField}
+          className="btn btn-outline-success"
+         >
+          Add Activity
+       </button>
+```
+  To add an extra activity field we have to click a button which will add a new field to current form. 
+```
+const addExtraField = (e) => {
+    let extraActivity = [
+      ...state.dailyData,
+      {
+        activity: "",
+        timeSpent: 0,
+      },
+    ];
+
+    setstate((previousState) => {
+      return {
+        ...previousState,
+        dailyData: [...extraActivity],
+      };
+    });
+  };
+```
+On every onClick event, addExtraField method will be called and set state after pushing new property to dailyData array.
+
+#### Pass data to Chart
+To pass current data to chart, we have to convert data in a specific format (array).
+For that we use submit button to convert current state data to specific format. On every submit button click onSubmit method will be called.
+
+```
+const onSubmit = (e) => {
+    e.preventDefault();
+    let chartLabels = state.dailyData
+      .map((data) => {
+        return data.activity;
+      })
+      .filter((e) => e);
+    let chartData = state.dailyData
+      .map((data) => {
+        return parseInt(data.timeSpent);
+      })
+      .filter((e) => e);
+
+    setstate((previousState) => {
+      return {
+        ...previousState,
+        chartData: chartData,
+        chartLabels: chartLabels,
+      };
+    });
+  };
+```
+Here, we have to convert state object to array using map method of array.
+And after that we have to set that data to current state.
+
+For passing data to chart component we have to check data availability for that we have to use conditional rendering.
+
+```
+{state.chartData.length && state.chartLabels.length ? (
+        <Chart {...state} />
+      ) : null}
+```
+Chart will only be rendered if there is a proper data to be passed to the chart.
+
+For more details,you can visit below links: https://reactjs.org/docs/conditional-rendering.html
 
 
+### Chart Component
+
+To make charts, we have to use react react-chartjs-2 which is wrapper for Chart.js.
+For this tutorial we will make three types of charts Line,Pie,Bar.For more details,you can visit below links: 
+- https://www.npmjs.com/package/react-chartjs-2
+- http://jerairrest.github.io/react-chartjs-2/#/
+
+In every chart we have to pass prop object.
+```
+<Line
+          data={{
+            labels: props.chartLabels,
+            datasets: [
+              {
+                data: props.chartData,
+                label: "Activity",
+                borderColor: "#3333ff",
+                fill: true,
+                backgroundColor: "#CAA6DB",
+              },
+            ],
+          }}
+        />
+```
+Here labels are those activities which we have been passed from Form component.
+Datasets have various properties in which data property take data which we have to plot on chart.
+For more details,you can visit below links: 
+- https://github.com/jerairrest/react-chartjs-2#properties
+- https://www.newline.co/@dmitryrogozhny/quick-introduction-to-displaying-charts-in-react-with-chartjs-and-react-chartjs-2--a85b4e2e
+
+To convert This chart to Bar chart we simply have to import Bar chat from react-chartjs-2 library.
+
+```
+<Bar
+        data={{
+          labels: props.chartLabels,
+          datasets: [
+            {
+              data: props.chartData,
+              label: "Activity",
+              borderColor: "#3333ff",
+              fill: true,
+              backgroundColor: colorPicker.map(() => colorPicker[Math.round(Math.random() * 2)])
+              ,
+            },
+
+          ],
+        }}
+      />
+```
+And same for pie chart 
+
+```
+<Pie
+        data={{
+          labels: props.chartLabels,
+          datasets: [
+            {
+              data: props.chartData,
+              label: "Activity",
+              borderColor: "#3333ff",
+              fill: true,
+              backgroundColor: colorPicker.map(() => colorPicker[Math.round(Math.random() * 2)])
+              ,
+            },
+          ],
+        }}
+      /> 
+```
+For other examples of chart you can refer 
+http://jerairrest.github.io/react-chartjs-2/#/
 
 ## Summary:
 
