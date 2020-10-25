@@ -51,5 +51,22 @@ Let’s walk through each of them,
 1. Install Bootstrap: ```npm i bootstrap```
     You can visit [here](https://www.npmjs.com/package/bootstrap).
 
+## Summary:
+
+In this tutorial, you learnt how to show data in the form of charts using react.
+
+### Points covered:
+
+- Add new input fields to react app dynamically.
+- You can customise the look and feel of charts.
+- Real time data representation in form of charts.
+- Give random colors to the charts.
+- Styling of input fields and buttons using Bootstrap.
+
+### Future scopes:
+
+- You can create charts for large data sets using react.
+- You can create a Task Management System for an organization/school/universities.
+- Customise charts to represent data in a more visually appealing way.
 
 
