@@ -51,6 +51,102 @@ Let’s walk through each of them,
 1. Install Bootstrap: ```npm i bootstrap```
     You can visit [here](https://www.npmjs.com/package/bootstrap).
 
+## Development:
+
+### Styling  in React
+There are various technics to style react application.We have used CSS Modules style.
+There is a separate style file for each component  `component-name.module.css`.
+We can easily use that by importing them in js/jsx file and access that by `className={styles.form}`.
+
+For more details,you can visit below links: 
+- https://medium.com/@dmitrynozhenko/9-ways-to-implement-css-in-react-js-ccea4d543aa3
+- https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
+
+### Form component (Form.jsx)
+
+#### Form in React
+To make form in react, we have to make states which store local values and change it according to user-inputs.
+For Function component we can use useState hook to make state.
+```
+const initialState = {
+  dailyData: [
+    {
+      activity: "",
+      timeSpent: 0,
+    },
+  ],
+  chartLabels: [],
+  chartData: [],
+  chartColot: [],
+};
+```
+By following  above code snippets, we can initialize state.
+
+`const [state, setstate] = useState(initialState);`
+
+Here initial state will become initial value for our form field.
+
+```
+{state.dailyData.map((data, index) => (
+          <Fragment key={index}>
+            <div className="row">
+              <div className="col">
+                <input
+                  type="text"
+                  name="activity"
+                  value={data.activity}
+                  className="form-control"
+                  onChange={(e) => onChange(e, index)}
+                  placeholder="Activity"
+                />
+              </div>
+              <div className="col">
+                <input
+                  type="number"
+                  name="timeSpent"
+                  value={data.timeSpent}
+                  className="form-control"
+                  onChange={(e) => onChange(e, index)}
+                  placeholder="Time Spent"
+                />
+              </div>
+            </div>
+            <br />
+          </Fragment>
+        ))}
+```
+There are two fields in our form:
+1. Activity
+2. Time spent during that activity (in hour)
+
+Each field has value property which is linked to state for showing current value of state in a form.
+
+```
+const onChange = (e, index) => {
+    let { name, value } = e.target;
+
+    let updatedState = [...state.dailyData];
+
+    updatedState[index][name] = value;
+
+    setstate((previousState) => {
+      return {
+        ...previousState,
+        dailyData: [...updatedState],
+      };
+    });
+  };
+```
+Onchange event of form will be handle by onChange handler.It will take event object and index of current changed activity.
+For that we can use setState method. 
+For setting state we have to extract name and value from event object.
+Here updatedState is temporary variable for mutating state.
+
+For more details,you can visit below links: https://reactjs.org/docs/forms.html
+ 
+
+
+
 ## Summary:
 
 In this tutorial, you learnt how to show data in the form of charts using react.
