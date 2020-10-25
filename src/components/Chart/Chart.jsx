@@ -10,10 +10,10 @@ const Chart = (props) => {
       <>
         <Line
           data={{
-            labels: props.chartLabels.map((activity) => activity),
+            labels: props.chartLabels,
             datasets: [
               {
-                data: props.chartData.map((timeSpent) => timeSpent),
+                data: props.chartData,
                 label: "Activity",
                 borderColor: "#3333ff",
                 fill: true,
@@ -24,10 +24,10 @@ const Chart = (props) => {
         />
         {/* <Bar
         data={{
-          labels: props.chartLabels.map((activity) => activity),
+          labels: props.chartLabels,
           datasets: [
             {
-              data: props.chartData.map((timeSpent) => timeSpent),
+              data: props.chartData,
               label: "Activity",
               borderColor: "#3333ff",
               fill: true,
@@ -40,10 +40,10 @@ const Chart = (props) => {
       /> */}
         {/* <Pie
         data={{
-          labels: props.chartLabels.map((activity) => activity),
+          labels: props.chartLabels,
           datasets: [
             {
-              data: props.chartData.map((timeSpent) => timeSpent),
+              data: props.chartData,
               label: "Activity",
               borderColor: "#3333ff",
               fill: true,
