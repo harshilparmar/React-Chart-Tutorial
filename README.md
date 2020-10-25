@@ -142,7 +142,7 @@ For that we can use setState method.
 For setting state we have to extract name and value from event object.
 Here updatedState is temporary variable for mutating state.
 
-For more details,you can visit below links: https://reactjs.org/docs/forms.html
+For more details,you can visit: https://reactjs.org/docs/forms.html
  
 #### Add Dynamic form field
 
@@ -217,13 +217,14 @@ For passing data to chart component we have to check data availability for that 
 ```
 Chart will only be rendered if there is a proper data to be passed to the chart.
 
-For more details,you can visit below links: https://reactjs.org/docs/conditional-rendering.html
+For more details,you can visit: https://reactjs.org/docs/conditional-rendering.html
 
 
-### Chart Component
+### Chart Component (Chart.jsx)
 
 To make charts, we have to use react react-chartjs-2 which is wrapper for Chart.js.
-For this tutorial we will make three types of charts Line,Pie,Bar.For more details,you can visit below links: 
+For this tutorial we will make three types of charts Line,Pie,Bar.
+For more details,you can visit below links: 
 - https://www.npmjs.com/package/react-chartjs-2
 - http://jerairrest.github.io/react-chartjs-2/#/
 
@@ -291,6 +292,9 @@ And same for pie chart
 ```
 For other examples of chart you can refer 
 http://jerairrest.github.io/react-chartjs-2/#/
+
+Here `colorPicker` is an array which we are using to generate random colors for charts `colorPicker.map(() => colorPicker[Math.round(Math.random() * 2)])`.
+
 
 ## Summary:
 
