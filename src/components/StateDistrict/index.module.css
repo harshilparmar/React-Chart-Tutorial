@@ -1,15 +1,7 @@
 .container {
     display: flex;
-    width: 40%;
-}
-
-.lineChart {
-    margin: 25px;
-}
-
-.chats {
-    display:  inline-block;
-    
+    justify-content: center;
+    width: 65%;
 }
 
 @media only screen and (max-width: 770px) {

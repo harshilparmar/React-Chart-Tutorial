@@ -1,44 +1,63 @@
-import React, { useState, useEffect } from "react";
-import { getDailyData } from "../../Api";
+import React from "react";
 import styles from "./Chart.module.css";
-import { Line, Bar } from "react-chartjs-2";
-const Chart = () => {
-  const [dailyData, setDailyData] = useState([]);
+import { Pie, Line, Bar } from "react-chartjs-2";
 
-  useEffect(() => {
-    let getChartData = async () => {
-      let data = await getDailyData();
+const Chart = (props) => {
 
-      setDailyData([...data]);
-    };
-    getChartData();
-  }, []);
+  const colorPicker = ["#FAF8F0", "#A7E9E1", "#FBC7C3", "#F7F4E7", "#B6DF82"]
 
-  const lineChart = dailyData.length ? (
-    <Line
-      data={{
-        labels: dailyData.map(({ date }) => date),
-        datasets: [
-          {
-            data: dailyData.map(({ confirmed }) => confirmed),
-            label: "Infected",
-            borderColor: "#3333ff",
-            fill: true,
-          },
-          {
-            data: dailyData.map(({ deaths }) => deaths),
-            label: "Deaths",
-            borderColor: "red",
-            backgroundColor: "rgba(255, 0, 0, 0.5)",
-            fill: true,
-          },
-        ],
-      }}
-    />
-  ) : (
-    "helo"
-  );
+  const Charts = props ? (
+    <>
+      <Line
+        data={{
+          labels: props.chartLabels.map((activity) => activity),
+          datasets: [
+            {
+              data: props.chartData.map((timeSpent) => timeSpent),
+              label: "Activity",
+              borderColor: "#3333ff",
+              fill: true,
+              backgroundColor: "#CAA6DB",
+            },
 
-  return <div className={styles.container}>{lineChart}</div>;
+          ],
+        }}
+      />
+      {/* <Bar
+        data={{
+          labels: props.chartLabels.map((activity) => activity),
+          datasets: [
+            {
+              data: props.chartData.map((timeSpent) => timeSpent),
+              label: "Activity",
+              borderColor: "#3333ff",
+              fill: true,
+              backgroundColor: colorPicker.map(() => colorPicker[Math.round(Math.random() * 2)])
+              ,
+            },
+
+          ],
+        }}
+      /> */}
+      {/* <Pie
+        data={{
+          labels: props.chartLabels.map((activity) => activity),
+          datasets: [
+            {
+              data: props.chartData.map((timeSpent) => timeSpent),
+              label: "Activity",
+              borderColor: "#3333ff",
+              fill: true,
+              backgroundColor: colorPicker.map(() => colorPicker[Math.round(Math.random() * 2)])
+              ,
+            },
+
+          ],
+        }}
+      />  */}
+    </>
+  ) : null;
+
+  return <div className={styles.container}>{Charts}</div>;
 };
 export default Chart;

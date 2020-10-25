@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Cards.module.css";
 import CountUp from "react-countup";
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import cx from "classnames";
-const Cards = ({ data: { confirmed, deaths, lastUpdate, recovered } }) => {
+const Cards = ({ data }) => {
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
@@ -19,10 +19,10 @@ const Cards = ({ data: { confirmed, deaths, lastUpdate, recovered } }) => {
               Infected
             </Typography>
             <Typography variant="h5">
-              {confirmed ? (
+              {data?.confirmed ? (
                 <CountUp
                   start={0}
-                  end={confirmed.value}
+                  end={Number(data.confirmed)}
                   duration={2}
                   separator=","
                 />
@@ -30,9 +30,9 @@ const Cards = ({ data: { confirmed, deaths, lastUpdate, recovered } }) => {
                 "loading"
               )}
             </Typography>
-            <Typography color="textSecondary">
+            {/* <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
-            </Typography>
+            </Typography> */}
             <Typography variant="body2">number of active cases</Typography>
           </CardContent>
         </Grid>
@@ -48,10 +48,10 @@ const Cards = ({ data: { confirmed, deaths, lastUpdate, recovered } }) => {
               Recorved
             </Typography>
             <Typography variant="h5">
-              {recovered ? (
+              {data?.recovered ? (
                 <CountUp
                   start={0}
-                  end={recovered.value}
+                  end={Number(data.recovered)}
                   duration={2}
                   separator=","
                 />
@@ -59,9 +59,9 @@ const Cards = ({ data: { confirmed, deaths, lastUpdate, recovered } }) => {
                 "loading"
               )}
             </Typography>
-            <Typography color="textSecondary">
+            {/* <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
-            </Typography>
+            </Typography> */}
 
             <Typography variant="body2">number of active cases</Typography>
           </CardContent>
@@ -78,10 +78,10 @@ const Cards = ({ data: { confirmed, deaths, lastUpdate, recovered } }) => {
               Death
             </Typography>
             <Typography variant="h5">
-              {deaths ? (
+              {data?.deaths ? (
                 <CountUp
                   start={0}
-                  end={deaths.value}
+                  end={Number(data.deaths)}
                   duration={2}
                   separator=","
                 />
@@ -89,11 +89,9 @@ const Cards = ({ data: { confirmed, deaths, lastUpdate, recovered } }) => {
                 "loading"
               )}
             </Typography>
-
             <Typography color="textSecondary">
-              {new Date(lastUpdate).toDateString()}
+              {new Date(data?.lastupdatedtime).toDateString()}
             </Typography>
-            <Typography variant="body2">number of active cases</Typography>
           </CardContent>
         </Grid>
       </Grid>
