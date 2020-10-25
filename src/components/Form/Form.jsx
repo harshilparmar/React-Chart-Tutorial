@@ -73,7 +73,7 @@ const Form = (props) => {
 
   return (
     <>
-      <h2>Daily Activity Management</h2>
+      <h2>How to Use Chart.js in React</h2>
       <form className={styles.form}>
         {state.dailyData.map((data, index) => (
           <Fragment key={index}>
