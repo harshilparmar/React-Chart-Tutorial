@@ -103,17 +103,17 @@ const Form = (props) => {
           </Fragment>
         ))}
 
-        <button type="submit" onClick={onSubmit} className="btn btn-primary">
-          Submit
-        </button>
         <button
           type="button"
-          style={{ margin: "15px" }}
+          style={{ marginRight: "25px" }}
           name="addNew"
           onClick={addExtraField}
           className="btn btn-outline-success"
         >
           Add Activity
+        </button>
+        <button type="submit" onClick={onSubmit} className="btn btn-primary">
+          Submit
         </button>
       </form>
       {state.chartData.length && state.chartLabels.length ? (
