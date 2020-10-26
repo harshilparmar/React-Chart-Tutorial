@@ -318,5 +318,5 @@ In this tutorial, you learnt how to show data in the form of charts using react.
 - Customise charts to represent data in a more visually appealing way.
 
 ## License 
-Lincensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](LICENSE).
 
