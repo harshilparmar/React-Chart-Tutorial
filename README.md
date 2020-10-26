@@ -18,7 +18,7 @@ The app will work according to given steps,
 1. Charts will be shown(based on the activity & hours logged)
 
 Flow of the web application is shown below:
- [[IMAGE]]
+ (./src/assets/demo.gif?raw=true)
  
 ## Prerequisites:
 
