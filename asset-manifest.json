@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/React-Chart-Tutorial/static/css/main.3a57319c.chunk.css",
+    "main.js": "/React-Chart-Tutorial/static/js/main.f4761c76.chunk.js",
+    "main.js.map": "/React-Chart-Tutorial/static/js/main.f4761c76.chunk.js.map",
+    "runtime-main.js": "/React-Chart-Tutorial/static/js/runtime-main.fdbdcd73.js",
+    "runtime-main.js.map": "/React-Chart-Tutorial/static/js/runtime-main.fdbdcd73.js.map",
+    "static/css/2.f7bc4ee6.chunk.css": "/React-Chart-Tutorial/static/css/2.f7bc4ee6.chunk.css",
+    "static/js/2.03b43faf.chunk.js": "/React-Chart-Tutorial/static/js/2.03b43faf.chunk.js",
+    "static/js/2.03b43faf.chunk.js.map": "/React-Chart-Tutorial/static/js/2.03b43faf.chunk.js.map",
+    "index.html": "/React-Chart-Tutorial/index.html",
+    "precache-manifest.c10e8da87f76794cb6d4063a607eac75.js": "/React-Chart-Tutorial/precache-manifest.c10e8da87f76794cb6d4063a607eac75.js",
+    "service-worker.js": "/React-Chart-Tutorial/service-worker.js",
+    "static/css/2.f7bc4ee6.chunk.css.map": "/React-Chart-Tutorial/static/css/2.f7bc4ee6.chunk.css.map",
+    "static/css/main.3a57319c.chunk.css.map": "/React-Chart-Tutorial/static/css/main.3a57319c.chunk.css.map",
+    "static/js/2.03b43faf.chunk.js.LICENSE.txt": "/React-Chart-Tutorial/static/js/2.03b43faf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fdbdcd73.js",
+    "static/css/2.f7bc4ee6.chunk.css",
+    "static/js/2.03b43faf.chunk.js",
+    "static/css/main.3a57319c.chunk.css",
+    "static/js/main.f4761c76.chunk.js"
+  ]
+}
