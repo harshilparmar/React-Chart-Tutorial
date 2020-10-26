@@ -56,6 +56,12 @@ Let’s walk through each of them,
 
 ## Development:
 
+### Folder Structure
+ <p align="center">
+  <img src="/src/assets/folderstructure.png" alt="flowchart" width="50%" />
+</p>
+
+
 ### Styling  in React
 There are various technics to style react application.We have used CSS Modules style.
 There is a separate style file for each component  `component-name.module.css`.
