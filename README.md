@@ -18,7 +18,10 @@ The app will work according to given steps,
 1. Charts will be shown(based on the activity & hours logged)
 
 Flow of the web application is shown below:
- (./src/assets/demo.gif?raw=true)
+ 
+ <p align="center">
+  <img src="/src/assets/React_Chart_Tutorial.png" alt="flowchart" width="50%" />
+</p> 
  
 ## Prerequisites:
 
