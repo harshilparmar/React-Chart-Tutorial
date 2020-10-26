@@ -317,4 +317,6 @@ In this tutorial, you learnt how to show data in the form of charts using react.
 - You can create a Task Management System for an organization/school/universities.
 - Customise charts to represent data in a more visually appealing way.
 
+## License 
+Lincensed under the [MIT License](LICENSE).
 
