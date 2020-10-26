@@ -1,6 +1,6 @@
 # Tutorial for How to use Chart.js in React
 
-The purpose of this tutorial is to demonstrate how to use ChartJS in React. In this tutorial, a small activity logging system is created from scratch.  Based on the activity logged and hours spent, the user will be able to see the relevant chart formed on the screen. At the end of this tutorial, learners will get the basic understanding of ChartJS and can develop varieties of charts for bigger datasets in large web applications.
+The purpose of this tutorial is to show how to use ChartJS in React. In this tutorial, a small activity logging system is created from scratch.  Based on the activity logged and hours spent, the user will be able to see the relevant chart formed on the screen. At the end of this tutorial, learners will get the basic understanding of ChartJS with React.
 
 ## Table of contents:
   * How will it work?
@@ -25,7 +25,7 @@ Flow of the web application is shown below:
  
 ## Prerequisites:
 
-In order to develop the Activity Logging System, we need to use few things. 
+To develop the Activity Logging System, we need to use few things. 
 Those are, 
 
 - Install Node
