@@ -58,7 +58,7 @@ Let’s walk through each of them,
 
 ### Folder Structure
  <p align="center">
-  <img src="/src/assets/folderstructure.png" alt="flowchart" width="50%" />
+  <img src="/src/assets/folderstructure.PNG" alt="folderstructure" width="50%" />
 </p>
 
 
